@@ -1,13 +1,12 @@
-
-pragma solidity ^0.8.10;
+pragma solidity ^0.5.0;
 import 'truffle/Assert.sol';
 import "truffle/DeployedAddresses.sol";
-import "contracts/stablecoin.sol";
+import ".\contracts\stablecoin.sol";
 
 contract Stablecoin {
 	stablecoin sc = stablecoin(DeployedAddresses.stablecoin());
 	address sampleId = 0xFEfc909b4138aed2bA6342F6fEFAF21115f116d9;
-	address ceo = 0xdB57e9BE8C924170eec9D4dB1C70818C92Da5671;
+	address ceo = 0x70fdAc39369d55464b410e2fCbbd4b78E002eD25;
 
 	function testMint() public{
 		uint r1 = sc.balanceOf(ceo);
@@ -28,3 +27,5 @@ contract Stablecoin {
 		sc.transfer(sampleId, 200);
 		uint r2 = sc.balanceOf(ceo);
 		Assert.equal(adopters[exId],exAd,'These numbers should match');
+	}
+}
