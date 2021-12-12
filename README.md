@@ -1,8 +1,34 @@
-# blockchain-developer-bootcamp-final-project
+# Blockchain-developer-bootcamp-final-project
 # Decentralized Financial Management dApp
+**PLEARN**
+
 **PLAY.LEARN.EARN**
 
 ---
+
+Links:
+
+Video Walkthrough:
+
+Public ETH Address:
+
+---
+
+**About**
+
+PLEARN is a very basic dApp that is designed to demonstrate learnings in the Consensys Academy Blockchain Developer Bootcamp.
+
+PLEARN allows anyone with a MetaMask wallet to invest and make passive income through playing.
+
+This project was built using:
+
+Truffle
+Web3
+React
+OpenZeppelin
+
+---
+
 **Project Description:**
 
 The Financial Managment dApp allows players to play in order to learn how to manage their fincances through making investments, buying assests, buying eral estate. The game could be played individually or in groups. Players need to pay off all their debts and expenses before moving to the next stage of the game and be able to reach their dream of being debt free and get their deam life.
@@ -11,46 +37,50 @@ The Financial Managment dApp allows players to play in order to learn how to man
 Players will be using the utility token: 
 **AMBITION (AMBI)- Utility token**: - for playing and paying transaction fees.
 
-
  ---
 
-**User Interaction flow:**
+## Directory Structure  
+1. contracts - contains solidity contracts 
+2. migrations - contains Truffle's migration scripts
+3. node_modules - created when `npm install` is run
+4. test - contains mocha/chai tests for solidity contracts
+5. PLEARN - contains all of the front-end UI, created running npx create-react-app 
+    1. build - contains optimized code used by Netlify
+    2. node_modules
+    3. public - contains UI files 
+    4. src - contains the front end source code
 
-Register with MetaMask
+--
+## Dependencies
 
-**How to play?**
-
-**The Dream:**
-
-Players need to choose their dream, which is the reason why they are playing. Your dream might be travelling the world, buying a yacht, saving the ocean mammals, or whatever dream you have.
-Players will need to deposit, for example, USDT(a stable coin)
-Players can play alone or with other players.
-In case a player chooses to play with others, s/he can create a group, where other players can join this group with a maximum number of players.
-Once everybody is ready and the group is complete,then,  they can start playing the game.
-Once started, you will need to choose the dream. Then, playera need to press the button, roll the dice and play.Once they have started the game, they will need to interact with the other players by clicking on the corresponding buttons (the dice to roll; the Done button after rolling; Buy to buy a property/asset) 
-Players will be offered different deals, big and small ones. Player can choose the deal s/he sees that will cover his/her expenses. 
-The deal might be buying real estate and renting it out, or buying a stock, holding it and selling it when the price goes up.
-Players will choose the deal to generate passive income which will help them to achieve their dreams.
-Players need to keep on playing to generate passive income in order to also cover their expenses.
+1. `npm install -g truffle`
+2. `npm install -g @truffle/hdwallet-provider`
+3. `npm install -g web3`
+4. `npm install -g @openzeppelin/contracts`
+5. `npm install -g ganache-cli`
 
 ---
 
-**Earning Income:** 
-With every roll, the player will start his/her income growing. Players should try not to save the profit to win- players should always remember that they need to make passive income to cover their monthly expenses.
+**User Interaction flow:**
 
-**Donation:** 
-Players can donate part of their income to charities. Players will have the opportunity to donate 10% of thier total income to charities. By doing so, they will be able to roll the dice over the next 3 rounds which will give them more opportunities to create more wealth.
+1. Connect MetaMask to dApp
+2. Register as a  new player
+3. Create a new game 
+4. Profit or banckruptcy
 
-**Check investments:**
-Players have purchased some stocks, started a business, and bought some real estate properties. Now, it is the time to collect on your investments. Players will buy at low prices and sell wehnt when the prices are high.
-Players can pick and choose how much cash flow they want coming in each month to get them closer to achieving their dream.
+---
 
-**Bankruptcy**
-A player who cannot pay what they owe is bankrupt and eliminated from the game.
-To avoid bankruptcy, player can sell houses and mortage properties.
-If the player is unable to pay off all of his debts, he declares bankruptcy and all of his properties become owned by the bank.
+## Running the Project
+1. Start a local Ganache blockchain using either the Ganache GUI or CLI `ganache-cli` . If using CLI, open a second terminal window.
+2. Run `truffle compile`
+3. Run `truffle migrate` or `truffle migrate --reset` to overwrite any existing.contract instance.
+4. Connect MetaMask to Ganache. Steps can be found here https://www.trufflesuite.com/docs/truffle/getting-started/truffle-with-metamask
+5. In the terminal, navigate to the `PLEARN` directory and run `nmp run start` to spin up the server for the front end.
 
-In order to get close to the Dream, which is the last spot on the game board, players can play small deals until they pay their debt. They can accept the big deals big deals, that are offered byt the game, when they have more than 10k, less than that, just small deals to reduce their debts loan. Unless they are good with financial managment and can take big deals from the begining and can pay their debts immediately 
+## Testing the Solution 
+To test, simply make sure your local Ganache network is running and that your  `truffle-config.js` network configuration is set to the correct port. Either 7545 or 8545 depending on how started Ganache.
+
+Then run `truffle test`
 
 ---
 **Features to be done:**
