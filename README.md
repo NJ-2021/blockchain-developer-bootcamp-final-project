@@ -23,8 +23,11 @@ PLEARN allows anyone with a MetaMask wallet to invest and make passive income th
 This project was built using:
 
 Truffle
+
 Web3
+
 React
+
 OpenZeppelin
 
 ---
@@ -50,7 +53,7 @@ Players will be using the utility token:
     3. public - contains UI files 
     4. src - contains the front end source code
 
---
+---
 ## Dependencies
 
 1. `npm install -g truffle`
