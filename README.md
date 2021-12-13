@@ -91,7 +91,7 @@ Then run `truffle test`
   **1- VISUALIZE (VISI) - stable coin:** 
   paying interest for staking.And in later stages will be used as a borrow token, in case players would like to leverage and buy more assets.
   
-  **2- PROBABILITIES (PROBI):** 
+  **2- MANIFESTATION (MANI):** 
   Obtained by voting- governance, and suggestions!
   
   _Suggestions: For each suggestion a player makes to improve the game, s/he will be getting a reward in case his suggestion won. So, in this case the game will improve by its       users' suggestions and they will be rewarded for their own suggestions_
