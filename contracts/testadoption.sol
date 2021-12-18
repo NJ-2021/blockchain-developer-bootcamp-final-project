@@ -5,7 +5,7 @@ import ".\contracts\stablecoin.sol";
 
 contract Stablecoin {
 	stablecoin sc = stablecoin(DeployedAddresses.stablecoin());
-	address sampleId = 0xFEfc909b4138aed2bA6342F6fEFAF21115f116d9;
+	address sampleId = 0xc8dD220A082c4dF343d1691Bde458e9E37A011Bb;
 	address ceo = 0x70fdAc39369d55464b410e2fCbbd4b78E002eD25;
 
 	function testMint() public{

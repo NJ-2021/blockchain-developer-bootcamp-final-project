@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.10;
 
 contract stablecoin{
 	address ceo = 0xdB57e9BE8C924170eec9D4dB1C70818C92Da5671;
