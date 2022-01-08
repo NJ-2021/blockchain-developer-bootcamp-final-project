@@ -2,11 +2,12 @@
 pragma solidity ^0.8.0;
 
 import "./Context.sol";
-import "@openzeppelin/contracts/utils/Pausable.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
-import "./ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./ExternallyTransferable.sol";
+import "hardhat/console.sol";
 
 contract StableCoin is
     ContextAware, // provides _msgSender(), _msgData()

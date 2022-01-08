@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./SafeMath.sol";
-
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "./Context.sol";
 
 abstract contract ExternallyTransferable is ContextAware {

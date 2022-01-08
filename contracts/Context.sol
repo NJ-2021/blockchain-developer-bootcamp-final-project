@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.21;
+pragma solidity >=0.8.0;
 
 contract ContextAware {
     function _msgSender() internal view virtual returns (address payable) {
