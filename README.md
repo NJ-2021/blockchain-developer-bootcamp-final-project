@@ -37,8 +37,9 @@ OpenZeppelin
 The Financial Managment dApp allows players to play in order to learn how to manage their fincances through making investments, buying assests, buying eral estate. The game could be played individually or in groups. Players need to pay off all their debts and expenses before moving to the next stage of the game and be able to reach their dream of being debt free and get their deam life.
 
 **For V1**:
-Players will be using the utility token: 
-**AMBITION (AMBI)- Utility token**: - for playing and paying transaction fees.
+Players will be using the Stable coin for borrowing: 
+  **1- VISUALIZE (VISI) - stable coin:** 
+  paying interest for staking.And in later stages will be used as a borrow token, in case players would like to leverage and buy more assets.
 
  ---
 
@@ -89,12 +90,8 @@ Then run `truffle test`
 **Features to be done:**
 
 **For V2**:
-2 other tokens will be added in the next stages:
 
-  **1- VISUALIZE (VISI) - stable coin:** 
-  paying interest for staking.And in later stages will be used as a borrow token, in case players would like to leverage and buy more assets.
-  
-  **2- MANIFESTATION (MANI):** 
+  **1- MANIFESTATION (MANI):** 
   Obtained by voting- governance, and suggestions!
   
   _Suggestions: For each suggestion a player makes to improve the game, s/he will be getting a reward in case his suggestion won. So, in this case the game will improve by its       users' suggestions and they will be rewarded for their own suggestions_
