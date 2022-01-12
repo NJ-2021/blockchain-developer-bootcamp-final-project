@@ -10,7 +10,7 @@ Links:
 
 Video Walkthrough:
 
-Public ETH Address:
+Public ETH Address for certification: 0x094c05b850ECc3912934c8FDCa9243865F309b95
 
 ---
 **About**
@@ -90,3 +90,4 @@ Then run `truffle test`
   Obtained by voting- governance, and suggestions!
   
   _Suggestions: For each suggestion a player makes to improve the game, s/he will be getting a reward in case his suggestion won. So, in this case the game will improve by its       users' suggestions and they will be rewarded for their own suggestions_
+  
