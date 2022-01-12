@@ -13,7 +13,6 @@ Video Walkthrough:
 Public ETH Address:
 
 ---
-
 **About**
 
 PLEARN is a very basic dApp that is designed to demonstrate learnings in the Consensys Academy Blockchain Developer Bootcamp.
@@ -31,7 +30,6 @@ React
 OpenZeppelin
 
 ---
-
 **Project Description:**
 
 The Financial Managment dApp allows players to play in order to learn how to manage their fincances through making investments, buying assests, buying eral estate. The game could be played individually or in groups. Players need to pay off all their debts and expenses before moving to the next stage of the game and be able to reach their dream of being debt free and get their deam life.
@@ -42,10 +40,9 @@ Players will be using the Stable coin for borrowing:
   paying interest for staking.And in later stages will be used as a borrow token, in case players would like to leverage and buy more assets.
 
  ---
-
 ## Directory Structure  
-1. contracts - contains solidity contracts 
-2. migrations - contains Truffle's migration scripts
+1. contracts - contain solidity contracts 
+2. migrations - contain Truffle's migration scripts
 3. node_modules - created when `npm install` is run
 4. test - contains mocha/chai tests for solidity contracts
 5. PLEARN - contains all of the front-end UI, created running npx create-react-app 
@@ -64,7 +61,6 @@ Players will be using the Stable coin for borrowing:
 5. `npm install -g ganache-cli`
 
 ---
-
 **User Interaction flow:**
 
 1. Connect MetaMask to dApp
@@ -73,7 +69,6 @@ Players will be using the Stable coin for borrowing:
 4. Profit or banckruptcy
 
 ---
-
 ## Running the Project
 1. Start a local Ganache blockchain using either the Ganache GUI or CLI `ganache-cli` . If using CLI, open a second terminal window.
 2. Run `truffle compile`
