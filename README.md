@@ -10,7 +10,7 @@ Links:
 
 Video Walkthrough:
 
-Public ETH Address for certification: 0x094c05b850ECc3912934c8FDCa9243865F309b95
+**Public ETH Address for certification**: 0x094c05b850ECc3912934c8FDCa9243865F309b95
 
 ---
 **About**
