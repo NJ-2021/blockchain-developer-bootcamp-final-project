@@ -1,9 +1,17 @@
-const MetaCoin = artifacts.require("MetaCoin");
+const MetaCoin = artifacts.require("../contracts/StableCoin");
 
 contract('MetaCoin', (accounts) => {
   it('should put 10000 MetaCoin in the first account', async () => {
     const metaCoinInstance = await MetaCoin.deployed();
     const balance = await metaCoinInstance.getBalance.call(accounts[0]);
+    
+    it("deploys successfully", async () => {
+      const address = contract.address;
+      assert.notEqual(address, 0x0);
+      assert.notEqual(address, "");
+      assert.notEqual(address, null);
+      assert.notEqual(address, undefined);
+    });
 
     assert.equal(balance.valueOf(), 10000, "10000 wasn't in the first account");
   });
@@ -34,7 +42,6 @@ contract('MetaCoin', (accounts) => {
     const accountTwoEndingBalance = (await metaCoinInstance.getBalance.call(accountTwo)).toNumber();
 
 
-    assert.equal(accountOneEndingBalance, accountOneStartingBalance - amount, "Amount wasn't correctly taken from the sender");
-    assert.equal(accountTwoEndingBalance, accountTwoStartingBalance + amount, "Amount wasn't correctly sent to the receiver");
+    assert.equal(error.message,"Returned error: VM Exception while processing transaction: revert ...");
   });
 });
