@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome to Crypto Trading Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://npmcdn.com/moralis@latest/dist/moralis.js"></script>
+  </head>
+  <body class=bg-dark>
+    
+    <div class="container text-white"> 
+    <!-- stats will go here -->
+  
+        
+          <div class="row">
+            <button id="btn-login"> Connect Metamask</button>
+            <button id="btn-logout">Logout</button>
+            <button id="btn-get-stats">Refresh Stats</button>
+            <ul id="gas-stats"></ul>
+            <button id="btn-mint"> Mint AMBI</button>
+            <button id="btn-stake"> Stake AMBI</button>
+     
+            <h2>Swap ETH to VISI </h2>
+            <input type="text" value="0.01"></input>
+            <br>
+            <button id="btn-login" onclick="swap()">SWAP!</button>
+          <div/>
+        <div/>
+
+    <script>
+const  ethers = require ("ethers");
+const AmbiToken = require ("./contracts/ambiToken.json");
+const AMBIAddress = "0x22a6Dc8A7E5126195F8682bf02C1a48197990e6f" 
+const serverUrl = "https://iw1xgpjprgfe.usemoralis.com:2053/server";
+const appId = "bxnjIaGW9tTLKBNNqo99aQHTEgE67jwMRmjC4zHB";
+
+Moralis.start({ serverUrl, appId });
+
+let provider;
+let signer;
+let contract;
+
+
+// LOG IN WITH METAMASK
+async function login() {
+  let user = Moralis.User.current();
+  if (!user) {
+    user = await Moralis.authenticate();
+  }
+  console.log("logged in user:", user);
+  getStats();
+  provider = new ethers.providers.Web3Provider(window.ethereum);
+  signer = provider.getSigner(); // Get the signer
+  contract = new ethers.Contract(AmbiToken, AmbiToken.abi, signer); // Call the contract and pass in the smart contract address, abi & signer
+}
+async function mint() {
+  const tx = contract.mint();
+  
+  }
+
+// LOG OUT
+async function logOut() {
+await Moralis.User.logOut();
+console.log("logged out");
+}
+
+// bind button click handlers
+document.getElementById("btn-login").onclick = login;
+document.getElementById("btn-logout").onclick = logOut;
+
+let dex;
+
+(async function(){
+
+    await Moralis.initPlugins();
+    dex = Moralis.Plugins.oneInch;
+
+    await Moralis.enable();
+    if(!Moralis.User.current())
+      await Moralis.authenticate();
+})();
+
+async function swap(){
+
+  const NATIVE_ADDRESS = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+  const ONEINCH_ADDRESS = "0x111111111117dc0aa78b770fa6a738034120c302";
+
+  const options = {chain:"eth", 
+                        fromTokenAddress:NATIVE_ADDRESS, 
+                        toTokenAddress:ONEINCH_ADDRESS,
+                        amount: Number(Moralis.Units.ETH("0.01")),
+                        fromAddress: Moralis.User.current().get("ethAddress"),
+                        slippage: 1
+                    }
+
+  
+  var receipt = await dex.swap(options);
+  console.log(receipt)
+ 
+}
+
+
+
+
+    </script>
+        
+</body>
+</html>
+
+
