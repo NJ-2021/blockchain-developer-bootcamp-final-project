@@ -6,9 +6,9 @@
 
 ---
 
-Links:
+Deployed Dapp url:http://localhost:3000/
 
-Video Walkthrough: http://localhost:3000/
+Video Walkthrough:https://youtu.be/HIZROqdTFds
 
 **Public ETH Address for certification**: 0x094c05b850ECc3912934c8FDCa9243865F309b95
 
