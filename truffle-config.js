@@ -3,7 +3,7 @@ const fs = require("fs");
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
-  // this is the pathe where your contract abi will be saved in
+  // this is the path where your contract abi will be saved in
   contracts_build_directory: "./my-app/src/contracts",
   networks: {
     development: {
