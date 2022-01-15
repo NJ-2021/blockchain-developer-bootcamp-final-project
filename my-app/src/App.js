@@ -2,9 +2,9 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 
-import MetaCoin from "./contracts/Vision.json";
+import VisiToken from "./contracts/Vision.json";
 
-const Metacoionddress = "0x20174993C5bC9d125707684a5d49032bD96c9Fc3";
+const visiTokenAddress = "0x5d5961a9D299ca0801133f19488510308935668c";
 function App() {
   // const [wager, setWager] = useState();
   const [maticAmount, setMaticAmount] = useState();
@@ -32,7 +32,7 @@ function App() {
       signer = provider.getSigner(); // Get the signer
       address = await signer.getAddress();
       console.log("Account:", await signer.getAddress());
-      contract = new ethers.Contract(Metacoionddress, MetaCoin.abi); // Call the contract and pass in the smart contract address, abi & signer
+      contract = new ethers.Contract(visiTokenAddress, VisiToken.abi); // Call the contract and pass in the smart contract address, abi & signer
       let balance = await provider.getBalance(address);
       console.log(balance);
       setMaticAmount(ethers.utils.formatEther(balance).slice(0,6)) 
@@ -50,10 +50,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Ether Coin Toss</h1>
-        <h4>Hello This is your value {maticAmount}</h4>
+        <h1>VISI Token</h1>
+        <h4>Hello This is your Vision balance {maticAmount}</h4>
         <p>
-          !! Please note this uses the Rinkeby test network. Using any other
+          !! Please note this uses the Matic test network. Using any other
           network will result in lost funds. !!
         </p>
         <button value={exchangeAmount} onClick={doTransaction}>
@@ -64,6 +64,7 @@ function App() {
           placeholder="Send your ETH"
         />
       </header>
+      
     </div>
   );
 }

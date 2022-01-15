@@ -1,48 +1,27 @@
-const HDWalletProvider = require("@truffle/hdwallet-provider");
-const fs = require("fs");
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+import HDWalletProvider from '@truffle/hdwallet-provider';
+import { readFileSync } from 'fs';
+const mnemonic = readFileSync(".secret").toString().trim();
 
-module.exports = {
-<<<<<<< HEAD
-  // this is the pathe where your contract abi will be saved in
-=======
-  // this is the path where your contract abi will be saved in
->>>>>>> 562069ed1b0b87315c6dd919bd54725770d5a237
-  contracts_build_directory: "./my-app/src/contracts",
-  networks: {
-    development: {
-      host: "127.0.0.1", // Localhost (default: none)
-      port: 8545, // Standard Ethereum port (default: none)
-      network_id: "*", // Any network (default: none)
-    },
-    matic: {
-      provider: () =>
-        new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com`),
-      network_id: 80001,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-    },
+export const networks = {
+  development: {
+    host: "127.0.0.1",
+    port: 8545,
+    network_id: "*", // Any network (default: none)
   },
-
-  // Set default mocha options here, use special reporters etc.
-  mocha: {
-    // timeout: 100000
+  matic: {
+    provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com`),
+    network_id: 80001,
+    gasPrice: 10000000000,
+    confirmations: 2,
+    timeoutBlocks: 200,
+    skipDryRun: true
   },
-
-  // Configure your compilers
-  compilers: {
-    solc: {
-      version: "0.8.11", // Fetch exact version from solc-bin (default: truffle's version)
-      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      settings: {
-        // See the solidity docs for advice about optimization and evmVersion
-        optimizer: {
-          enabled: false,
-          runs: 200,
-        },
-        evmVersion: "byzantium",
-      },
-    },
-  },
+};
+export const mocha = {
+  // timeout: 100000
+};
+export const compilers = {
+  solc: {
+    version: "0.8.11",
+  }
 };
