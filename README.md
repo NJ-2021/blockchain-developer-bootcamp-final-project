@@ -37,8 +37,11 @@ Players will be using the Stable coin for borrowing:
 
  ---
 ## Prerequisites
+
 Node.js >= v14
+
 Truffle, Ganache and Metamask
+
 Npm
 
 ---
