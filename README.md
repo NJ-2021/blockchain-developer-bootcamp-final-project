@@ -6,7 +6,7 @@
 
 ---
 
-Deployed Dapp url:http://localhost:3000/
+Deployed Dapp url:https://nj-2021.github.io/blockchain-developer-bootcamp-final-project/
 
 Video Walkthrough:https://youtu.be/HIZROqdTFds
 
