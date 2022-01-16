@@ -56,16 +56,13 @@ function App() {
           !! Please note this uses the Matic test network. Using any other
           network will result in lost funds. !!
         </p>
-        <button value={exchangeAmount} onClick={doTransaction}>
-          Start the coin toss!
-        </button>
         <input
           onChange={(e) => setExchangeAmount(e.target.value)}
           placeholder="Send your ETH"
         />
+
       </header>
-      
-    </div>
+  </div>
   );
 }
 export default App;
