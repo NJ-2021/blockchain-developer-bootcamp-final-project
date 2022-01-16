@@ -6,9 +6,9 @@
 
 ---
 
-Links:
+Deployed Dapp url:https://nj-2021.github.io/blockchain-developer-bootcamp-final-project/
 
-Video Walkthrough:
+Video Walkthrough:https://youtu.be/HIZROqdTFds
 
 **Public ETH Address for certification**: 0x094c05b850ECc3912934c8FDCa9243865F309b95
 
@@ -17,7 +17,7 @@ Video Walkthrough:
 
 PLEARN is a very basic dApp that is designed to demonstrate learnings in the Consensys Academy Blockchain Developer Bootcamp.
 
-PLEARN allows anyone with a MetaMask wallet to invest and make passive income through playing.
+PLEARN allows anyone with a MetaMask wallet to invest and make passive income through playing. **VISI**,the stableCoin, is a part of a three- model token and was deployed on Mumbai (Polygon Testnet) Network. The stablecoin will be usedin the game for borrowing.
 
 This project was built using:
 
@@ -30,16 +30,21 @@ React
 OpenZeppelin
 
 ---
-**Project Description:**
-
-The Financial Managment dApp allows players to play in order to learn how to manage their fincances through making investments, buying assests, buying eral estate. The game could be played individually or in groups. Players need to pay off all their debts and expenses before moving to the next stage of the game and be able to reach their dream of being debt free and get their deam life.
-
 **For V1**:
 Players will be using the Stable coin for borrowing: 
   **1- VISUALIZE (VISI) - stable coin:** 
   paying interest for staking.And in later stages will be used as a borrow token, in case players would like to leverage and buy more assets.
 
  ---
+## Prerequisites
+
+Node.js >= v14
+
+Truffle, Ganache and Metamask
+
+Npm
+
+---
 ## Directory Structure  
 1. contracts - contain solidity contracts 
 2. migrations - contain Truffle's migration scripts
@@ -65,8 +70,7 @@ Players will be using the Stable coin for borrowing:
 
 1. Connect MetaMask to dApp
 2. Register as a  new player
-3. Create a new game 
-4. Profit or banckruptcy
+
 
 ---
 ## Running the Project
@@ -90,4 +94,8 @@ Then run `truffle test`
   Obtained by voting- governance, and suggestions!
   
   _Suggestions: For each suggestion a player makes to improve the game, s/he will be getting a reward in case his suggestion won. So, in this case the game will improve by its       users' suggestions and they will be rewarded for their own suggestions_
+  
+ **2- AMBITION (AMBI):**
+ The utility token that is going to be used for playing, buying and selling assets.
+  
   
