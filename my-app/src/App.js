@@ -6,10 +6,11 @@ import VisiToken from "./contracts/Vision.json";
 
 const visiTokenAddress = "0x5d5961a9D299ca0801133f19488510308935668c";
 function App() {
-  // const [wager, setWager] = useState();
   const [maticAmount, setMaticAmount] = useState();
   const [visiAmount, setVisiAmount] = useState();
+  const [visiAmountToSent, setVisiAmountToSend] = useState();
   const [exchangeAmount, setExchangeAmount] = useState();
+  const [addressTo, setAddressTo] = useState();
 
   let contract;
   let provider;
@@ -35,34 +36,81 @@ function App() {
       contract = new ethers.Contract(visiTokenAddress, VisiToken.abi); // Call the contract and pass in the smart contract address, abi & signer
       let balance = await provider.getBalance(address);
       console.log(balance);
-      setMaticAmount(ethers.utils.formatEther(balance).slice(0,6)) 
-      
+      setMaticAmount(ethers.utils.formatEther(balance).slice(0, 6));
+
+      await contract.balanceOf(address).then((balance) => {
+        setVisiAmount(balance);
+      });
       // let updatedWager = ethers.utils.parseEther(wager.toString()); // Convert wager state variable to ethers.js format
       // const tx = await contract.newCoinToss({ value: updatedWager }); // Call the contract function and pass in the wager
     }
   }
 
-  async function doTransaction() {
-    const tx = await contract.exchange(exchangeAmount);
-    // const tx = await contract.newCoinToss({ value: updatedWager }); // Call the contract function and pass in the wager
+  async function sendEthToContract() {
+    await contract
+      .transfer(visiTokenAddress, ethers.utils.formatEther(exchangeAmount))
+      .then((result) => console.log("success", result))
+      .catch((err) => {
+        console.log("Failed with error: " + err);
+      });
+    await contract
+      .transfer(address, exchangeAmount)
+      .then((result) => console.log("success", result))
+      .catch((err) => {
+        console.log("Failed with error: " + err);
+      });
+  }
+
+  async function sendVisiToAccount() {
+    const tx = await contract
+      .transferFrom(
+        address,
+        addressTo,
+        ethers.utils.formatEther(visiAmountToSent)
+      )
+      .then((result) => console.log("success", result))
+      .catch((err) => {
+        console.log("Failed with error: " + err);
+      });
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>VISI Token</h1>
-        <h4>Hello This is your Vision balance {maticAmount}</h4>
+        <h4>Hello This is your Matic balance {maticAmount}</h4>
         <p>
           !! Please note this uses the Matic test network. Using any other
           network will result in lost funds. !!
         </p>
+        <button onClick={sendEthToContract}>Get Visi</button>
+
         <input
           onChange={(e) => setExchangeAmount(e.target.value)}
-          placeholder="Send your ETH"
+          placeholder="Send your Matic"
         />
 
+        <br />
+        <br />
+        <br />
+        <h4>Hello This is your Visi balance {visiAmount || 0}</h4>
+        <p>
+          !! Please note this uses the Matic test network. Using any other
+          network will result in lost funds. !!
+        </p>
+        <button onClick={sendVisiToAccount}>Sent Visi</button>
+
+        <input
+          onChange={(e) => setAddressTo(e.target.value)}
+          placeholder="Address you want to sent Visi Too"
+        />
+        <input
+          onChange={(e) => setVisiAmountToSend(e.target.value)}
+          placeholder="Amount of Visi"
+        />
       </header>
-  </div>
+    </div>
   );
 }
 export default App;
+
