@@ -1,22 +1,15 @@
 {
   "files": {
-    "main.css": "/repository-name/static/css/main.5739ad41.chunk.css",
-    "main.js": "/repository-name/static/js/main.d327ebcb.chunk.js",
-    "main.js.map": "/repository-name/static/js/main.d327ebcb.chunk.js.map",
-    "runtime-main.js": "/repository-name/static/js/runtime-main.0d13458a.js",
-    "runtime-main.js.map": "/repository-name/static/js/runtime-main.0d13458a.js.map",
-    "static/js/2.77b35c2e.chunk.js": "/repository-name/static/js/2.77b35c2e.chunk.js",
-    "static/js/2.77b35c2e.chunk.js.map": "/repository-name/static/js/2.77b35c2e.chunk.js.map",
-    "static/js/3.aa931c21.chunk.js": "/repository-name/static/js/3.aa931c21.chunk.js",
-    "static/js/3.aa931c21.chunk.js.map": "/repository-name/static/js/3.aa931c21.chunk.js.map",
-    "index.html": "/repository-name/index.html",
-    "static/css/main.5739ad41.chunk.css.map": "/repository-name/static/css/main.5739ad41.chunk.css.map",
-    "static/js/2.77b35c2e.chunk.js.LICENSE.txt": "/repository-name/static/js/2.77b35c2e.chunk.js.LICENSE.txt"
+    "main.css": "/blockchain-developer-bootcamp-final-project/static/css/main.073c9b0a.css",
+    "main.js": "/blockchain-developer-bootcamp-final-project/static/js/main.4240f347.js",
+    "static/js/787.28cb0dcd.chunk.js": "/blockchain-developer-bootcamp-final-project/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/blockchain-developer-bootcamp-final-project/index.html",
+    "main.073c9b0a.css.map": "/blockchain-developer-bootcamp-final-project/static/css/main.073c9b0a.css.map",
+    "main.4240f347.js.map": "/blockchain-developer-bootcamp-final-project/static/js/main.4240f347.js.map",
+    "787.28cb0dcd.chunk.js.map": "/blockchain-developer-bootcamp-final-project/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d13458a.js",
-    "static/js/2.77b35c2e.chunk.js",
-    "static/css/main.5739ad41.chunk.css",
-    "static/js/main.d327ebcb.chunk.js"
+    "static/css/main.073c9b0a.css",
+    "static/js/main.4240f347.js"
   ]
 }
